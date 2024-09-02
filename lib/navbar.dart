@@ -1,6 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:medistation_project/exercisespage.dart';
+import 'package:medistation_project/goalspage.dart';
+import 'package:medistation_project/notificationspage.dart';
+import 'package:medistation_project/profilepage.dart';
+import 'package:medistation_project/tipspage.dart';
+import 'mainpage.dart';
+
+
 
 class Navbar extends StatelessWidget {
+
   const Navbar({super.key});
 
   @override
@@ -22,32 +31,57 @@ class Navbar extends StatelessWidget {
           ListTile(
             leading: const Icon(Icons.av_timer),
             title: const Text('Meditation'),
-            onTap: () => print('Meditation tapped')
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(
+                builder: (_) => MainPage(title: 'MediStation           ',),
+              ));
+            },
           ),
           ListTile(
             leading: const Icon(Icons.tips_and_updates),
             title: const Text('Tips'),
-            onTap: () => print('tips tapped')
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(
+                builder: (_) => TipsPage(),
+                ));
+            },
           ),
           ListTile(
             leading: const Icon(Icons.notes),
             title: const Text('Goals and Rewards'),
-            onTap: () => print('Goals and Rewards tapped')
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(
+                builder: (_) => GoalsPage(),
+
+              ));
+            }
           ),
           ListTile(
             leading: const Icon(Icons.medical_information),
             title: const Text('Breathing Exercises'),
-            onTap: () => print('Breathing Exercises tapped')
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(
+                builder: (_) => ExercisesPage(),
+              ));
+            }
           ),
           ListTile(
             leading: const Icon(Icons.person_2),
             title: const Text('Profile'),
-            onTap: () => print('Profile tapped')
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(
+                builder: (_) => ProfilePage(),
+              ));
+            }
           ),
           ListTile(
             leading: const Icon(Icons.notifications),
             title: const Text('Notifications and Reminders'),
-            onTap: () => print('Notifications tapped')
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(
+                builder: (_) => NotificationsPage(),
+              ));
+            }
           ),
           Divider(),
           ListTile(
@@ -63,5 +97,10 @@ class Navbar extends StatelessWidget {
         ],
       ),
     );
+
+  
+    
   }
+
+
 }

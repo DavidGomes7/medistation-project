@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:circular_countdown_timer/circular_countdown_timer.dart';
 import 'package:flutter/widgets.dart';
 import 'package:just_audio/just_audio.dart';
+import 'package:medistation_project/tipspage.dart';
 import 'navbar.dart';
 
 class MainPage extends StatefulWidget {
@@ -62,15 +63,16 @@ class _MainPageState extends State<MainPage> {
     });
   }
 
+
   @override
   Widget build(BuildContext context) {
 
     return Scaffold(
       drawer: Navbar(),
       appBar: AppBar(
-        title: Center(child: Text(widget.title),),
-
-        //backgroundColor: Colors.lightBlue,
+        title: Center(child: Text(widget.title,style: TextStyle(color: Colors.white),),),
+        iconTheme: IconThemeData(color: Colors.white),
+        backgroundColor: Colors.lightBlue,
     
       ),
 
@@ -175,7 +177,6 @@ class _MainPageState extends State<MainPage> {
     );
   }
 
-  
 
 
   Widget _button({required String title, VoidCallback? onPressed}) {
@@ -194,62 +195,16 @@ class _MainPageState extends State<MainPage> {
     );
   }
   
-  void playsong() {
 
-  }
-
-
-
-/*
-  // Variables
-  int timeLeft = 60;
-
-  //String timeleftString = timeLeft.toString();
-
-  // Timer method
-  void _startCountDown() {
-    Timer.periodic(const Duration(seconds: 1), (timer) {
-      setState(() {
-        timeLeft--;  
-       
-      });
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-
-    return Scaffold(
-      appBar: AppBar(
-        // TRY THIS: Try changing the color here to a specific color (to
-        // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
-        // change color while the other colors stay the same.
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: <Widget>[
-            Text(
-              timeLeft.toString(),
-              style: TextStyle(fontSize: 70),
-              ),
-            MaterialButton(
-              onPressed: _startCountDown,
-              color: Colors.blue,
-              child: Text(
-                'Começar Meditação',
-                style: TextStyle(color: Colors.white),
-                ),
-            ),
-          ],
-        ),
-      ),
+    // abre tipspage
+  openTipsPage() {
+    Navigator.push(context, MaterialPageRoute(
+      builder: (_) => TipsPage(),
+    ),
     );
-  }*/
+  }
+    
 }
+
 
 
