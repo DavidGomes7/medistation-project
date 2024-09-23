@@ -28,7 +28,7 @@ class _MainPageState extends State<MainPage> {
     return "${minutes.toString().padLeft(2, '0')}:${seconds.toString().padLeft(2, '0')}";
   }
 
-  void handlePlayPause() {
+  void handlePlayPause() async {
     if(player.playing) {
       player.pause();
     } else {

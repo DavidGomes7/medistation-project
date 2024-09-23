@@ -39,6 +39,7 @@ dependencies:
   just_audio_background: ^0.0.1-beta.13
   just_audio: ^0.9.40
   url_launcher: ^6.3.0
+  percent_indicator: ^4.2.3
   
 
 dev_dependencies:

@@ -86,7 +86,7 @@ class _TipsPageState extends State<TipsPage> {
               Padding(padding: EdgeInsets.all(10)),
               Container(
                 color: Colors.lightBlue[50],
-                height: 230,
+                height: 200,
                 width: 300,
                 child: Column(
                   children: [
@@ -97,8 +97,7 @@ class _TipsPageState extends State<TipsPage> {
                       " Creating a dedicated space for meditation promotes concentration, establishes"
                       " routine, reduces distractions, and promotes emotional safety. A specific area "
                       "can also help the mind to prepare for meditation, reinforcing the habit and enhancing"
-                      " focus. Lighting a candle or incense can signal to your brain that you’re about to sit"
-                      " to meditate."),
+                      " focus."),
 
                     ),
                   ],
@@ -190,19 +189,38 @@ class _TipsPageState extends State<TipsPage> {
                         );
                       },
                     ),
-                    Padding(padding: EdgeInsets.all(10)),
-                    Link(
-                      uri: Uri.parse(
-                       'https://news.harvard.edu/gazette/story/2018/04/harvard-researchers-study-how-mindfulness-may-change-the-brain-in-depressed-patients/'),
-                      target: LinkTarget.blank,
-                      builder: (BuildContext ctx, FollowLink? openLink) {
-                        return TextButton.icon(
-                      onPressed: openLink,
-                      label: const Text('When science meets mindfulness'),
-                      //icon: const Icon(Icons.read_more),
-                        );
-                      },
+                    //Padding(padding: EdgeInsets.all(10)),
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: Link(
+                        uri: Uri.parse(
+                        'https://news.harvard.edu/gazette/story/2018/04/harvard-researchers-study-how-mindfulness-may-change-the-brain-in-depressed-patients/'),
+                        target: LinkTarget.blank,
+                        builder: (BuildContext ctx, FollowLink? openLink) {
+                          return TextButton.icon(
+                        onPressed: openLink,
+                        label: const Text('When science meets mindfulness'),
+                        //icon: const Icon(Icons.read_more),
+                          );
+                        },
+                      ),
                     ),
+                     Align(
+                      alignment: Alignment.centerLeft,
+                      child: Link(
+                        uri: Uri.parse(
+                        'https://www.calm.com/blog/concentration-meditation'),
+                        target: LinkTarget.blank,
+                        builder: (BuildContext ctx, FollowLink? openLink) {
+                          return TextButton.icon(
+                        onPressed: openLink,
+                        label: const Text('Concentration meditation: what is it and how to practice?'),
+                        //icon: const Icon(Icons.read_more),
+                          );
+                        },
+                      ),
+                    ),
+                    
                   ],
                 ),
               ),
